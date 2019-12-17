@@ -1,5 +1,9 @@
 const autoprefixer = require('autoprefixer')
 const pxtorem = require('postcss-pxtorem') // 将单位转化为rem
+const path = require('path')
+function resolve(dir) {
+  return path.join(__dirname, dir)
+}
 module.exports = {
   css: {
     loaderOptions: {
@@ -14,5 +18,13 @@ module.exports = {
         ]
       }
     }
+  },
+  devServer: {
+    hot: true
+  },
+  chainWebpack: config => {
+    config.resolve.alias
+      .set('@', resolve('src'))
+      .set('_c', resolve('src/components'))
   }
 }
