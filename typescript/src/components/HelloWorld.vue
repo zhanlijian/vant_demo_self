@@ -75,15 +75,18 @@
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from "vue-property-decorator";
+// import { Component, Prop, Vue } from "vue-property-decorator";
 
-@Component
-export default class HelloWorld extends Vue {
-  @Prop() private msg!: string;
-}
+// @Component
+// export default class HelloWorld extends Vue {
+//   @Prop() private msg: string;
+// }
+export default {
+  props: ["msg"]
+};
 </script>
 
-<style scoped lang="less">
+<style lang="less">
 h3 {
   margin: 40px 0 0;
 }
